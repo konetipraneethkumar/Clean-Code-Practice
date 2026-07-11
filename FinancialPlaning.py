@@ -5,6 +5,7 @@ our income Should divide 4 parts like this
 1/4 th % - Future Needs
 1/8 th % - donation
 1/8 th % - Reserved funds.
+reference URL :- https://youtube.com/shorts/lHi83IcsJ1U?si=lgaip1nGG75o9i7z
 
 """
 import json

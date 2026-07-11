@@ -12,55 +12,60 @@ import json
 
 # Goal 1 user enter the salary and the money instantly divided into 4 parts as specified
 class SalaryAllocation:
+    """ class Variables"""
     HOUSE_AND_ENTERTAINMENT_SLAB = 1/2
     FUTURE_GOALS_SLAB = 1/4
     DONATION_SLAB = 1/8
     RESERVED_SLAB = 1/8
     TITLE = "Salary Allocation"
 
-    def __init__(self,salary_amount):
+
+    def __init__(self,salary_amount) -> None:
+        """ Constructor with default parameter salary_amount """
         if salary_amount <= 0:
             raise ValueError("Salary amount must be greater than zero")
         self.salary_amount = salary_amount
 
 
-    def display_salary(self):
-        """ Displlaing salary allocation title """
-        return f"{self.Title} for {self.salary_amount}"
+    def display_salary(self) -> str:
+        """ Returning the salary allocation title."""
+        return f"{self.TITLE} for {self.salary_amount}"
 
 
-    def house_and_entertainment(self):
+    def house_and_entertainment(self) -> float:
         """ House_And_Entertainment Calculation """
         return self.salary_amount * self.HOUSE_AND_ENTERTAINMENT_SLAB
 
 
-    def future_goals(self):
+    def future_goals(self) -> float:
         """ Future_Goals Calculation """
         return self.salary_amount * self.FUTURE_GOALS_SLAB
 
 
-    def donation(self):
-        """ Donation Calculation """
+    def donation(self) -> float:
+        """ Return the allocated donation amount."""
         return self.salary_amount * self.DONATION_SLAB
 
 
-    def reserved(self):
+    def reserved(self) -> float:
         """ Reserved_Amount Calculation """
         return self.salary_amount * self.RESERVED_SLAB
 
 
-    def json_response(self):
+    def to_json(self) -> str:
         """ Displaying Json Response """
 
-         return json.dumps({
-             "Title": self.display_salary(),
-             "Salary": self.salary_amount,
-             "House And Entertainment": self.house_and_entertainment(),
-             "Future Goals": self.future_goals(),
-             "Donation": self.donation(),
-             "Reserved": self.reserved()
+        data =  json.dumps({
+             "title": self.display_salary(),
+             "salary": self.salary_amount,
+             "house_and_entertainment": self.house_and_entertainment(),
+             "future_goals": self.future_goals(),
+             "donation": self.donation(),
+             "reserved": self.reserved()
          })
+        return data
 
-obj = SalaryAllocation(100000)
-x=obj.json_response()
-print(x)
+if __name__ == "__main__":
+    obj = SalaryAllocation(100000)
+    x = obj.to_json()
+    print(json.dumps(x, indent=4))

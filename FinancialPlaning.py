@@ -1,10 +1,10 @@
 """
-from ramayanam Garikapati narasimha rao garu said:
+from Ramayanam Garikipati Narasimha rao Garu said:
 our income Should divide 4 parts like this
 1/2 th % - should use for our daily needs and Entertainment
-1/4 th % - Future health, marriages,education , for property etc
-1/8 th % - donate
-1/8 th % - reserved funds.
+1/4 th % - Future Needs
+1/8 th % - donation
+1/8 th % - Reserved funds.
 
 """
 import json
